@@ -1,22 +1,9 @@
- var config = {
-    apiKey: "AIzaSyCe9sgnYezdw4cxguuy72ga_7N7oDPAF30",
-    authDomain: "crackoscl.firebaseapp.com",
-    databaseURL: "https://crackoscl.firebaseio.com",
-    storageBucket: "crackoscl.appspot.com",
-    messagingSenderId: "598614736278"
-  };
-  firebase.initializeApp(config);
-
-
-
-
-var clinica = firebase.database().ref();
-clinica.on('value', function(snapshot) {
-  var data = snapshot.val();
-$("#pacientes tbody").empty();
-    
-var row = "";
-    for(pacientes in snapshot.val()){
+ $(document).ready(function () {
+           
+var clinica = $.getJSON("crackoscl.json", function (data) {
+    $("#pacientes tbody").empty();
+    var row = "";
+    for(pacientes in data){
         console.log(pacientes, ',', data[pacientes]);
        
         row += "<tr>"+
@@ -30,9 +17,32 @@ var row = "";
         "<td>"+ data[pacientes].telefono + "</td>"+
         "<td>"+ data[pacientes].ingreso + "</td>"+
         "<td>"+ data[pacientes].estado + "</td>"+
-    "</tr>"        
+    "</tr>"      
+
     }
-    console.log(row);
+      console.log(row);
     $("#pacientes tbody").append(row);
-    row = "";
+    row = "";            
+   });
+     
+        
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 100,
+      values: [ 15, 60 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+      }
+    });
+      
+    $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+      " - " + $( "#slider-range" ).slider( "values", 1 ) );
+      
+    
+      
+  } );     
+     
 });
+            
