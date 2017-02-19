@@ -20,8 +20,6 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
-        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     
 </head>
@@ -29,17 +27,25 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
- 
-        <div class="col-md-4">
-        <p>
-              <label for="amount">Rango de Edad:</label>
-              <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-        </p>
- 
-<div id="slider-range"></div>
+        <div class="container-fluid">
+        <div class="col-md-1">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Menu
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#" id="boton">Mujeres Fertiles con Isapre</a></li>
+                        <li><a href="#">Todos los pacientes de maipu</a></li>
+                        <li><a href="#">todos los pacientes atendidos en septiembre</a></li>
+                        <li><a href="#">Hombres</a></li>
+                        <li><a href="#">Mujeres Fertiles</a></li>
+                        
+                    </ul>
         </div>
-        
-        <div class="col-md-7">
+
+        </div>
+        <div class="col-md-11">
                 <table id="pacientes" class="table">
                     <thead>
                         <tr class="info">
@@ -69,7 +75,7 @@
 
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
-        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+        <script src="js/lodash.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
