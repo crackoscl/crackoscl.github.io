@@ -1,7 +1,8 @@
  $(document).ready(function () {
            
 var clinica = $.getJSON("crackoscl.json", function (data) {
-    
+
+//primer filtro    
 $("#boton").click(Tpasientes);
 
 function Tpasientes(){
@@ -32,11 +33,44 @@ for (var i=0;i<Prueba.length;i++)
     $("#pacientes tbody").append(row);
     row = "";
 }
+//fin
 
-   });
+//segundo filtro
+$("#boton2").click(Tpasientes2);
+
+function Tpasientes2(){
+var Prueba = $(data).filter(function (i,n){
+  return n.comuna === "MAIPU";
+});
+
+$("#pacientes tbody").empty();
+    var row = "";
+
+for (var i=0;i<Prueba.length;i++)
+  {
+       
+        row += "<tr>"+
+        "<td>"+ Prueba[i].fecha+ "</td>"+
+        "<td>"+ Prueba[i].nombre+ "</td>"+
+        "<td>"+ Prueba[i].rut + "</td>"+
+        "<td>"+ Prueba[i].comuna + "</td>"+
+        "<td>"+ Prueba[i].edad + "</td>"+
+        "<td>"+ Prueba[i].sexo + "</td>"+
+        "<td>"+ Prueba[i].pre + "</td>"+
+        "<td>"+ Prueba[i].telefono + "</td>"+
+        "<td>"+ Prueba[i].ingreso + "</td>"+
+        "<td>"+ Prueba[i].estado + "</td>"+    "</tr>"  
+}
+
+  console.log(row);
+    $("#pacientes tbody").append(row);
+    row = "";
+}
+
+   }); //FIN LLAMADA A JSON
 
  
-});
+}); //DOCUMENT READY CARGA DE PAGINA 
 
 
 
