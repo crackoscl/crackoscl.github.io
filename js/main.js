@@ -1,35 +1,15 @@
 
-
-$(document).ready(function() {
-    $('#pacientes').DataTable({
-        "processing" : true,
-        "ajax" : {
-            "url" : "https://crackoscl.github.io/crackoscl.json",
-            dataSrc : ''
-        },
-        "columns" : [ {
-            "data" : "fecha"
-        }, {
-            "data" : "nombre"
-        }, {
-            "data" : "rut"
-        }, {
-            "data" : "comuna"
-        },
-        {
-            "data" : "edad"
-        },{
-            "data" : "sexo"
-        },{
-            "data" : "pre"
-        },{
-            "data" : "telefono"
-        },{
-            "data" : "ingreso"
-        },{
-            "data" : "estado"
-        }
-        ]
-    });
-});
-
+new Vue({
+  el: '#app',
+  data: {
+    films: [
+      {id: 4, name: 'The Phantom Menace', seen: false},
+      {id: 5, name: 'Attack of the Clones', seen: false},
+      {id: 6, name: 'Revenge of the Sith', seen: false},
+      {id: 1, name: 'A New Hope', seen: true},
+      {id: 2, name: 'The Empire Strikes Back', seen: true},
+      {id: 3, name: 'Return of the Jedi', seen: true},
+      {id: 7, name: 'The Force Awakens', seen: false}
+    ]
+  }
+})
