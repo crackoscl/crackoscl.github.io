@@ -3,11 +3,16 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   body{
+     font-size: 18px;
+    font-family:'Yanone Kaffeesatz',Arial, Helvetica, sans-serif;    
+   }
    .navbar-default {
     background-color: #9b59b6;
     border-color: #8e44ad;
   }
   .navbar-default .navbar-brand {
+    font-size: 25px;
     color: #ffffff;
   }
   .navbar-default .navbar-brand:hover,
@@ -26,6 +31,7 @@
   }
   .navbar-default .navbar-nav > li > .dropdown-menu {
     background-color: #9b59b6;
+    font-size: 18px;
   }
   .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
     color: #ffffff;
@@ -100,6 +106,8 @@
     border-color: #8d44ad #8d44ad #8d44ad;
 }
 
+
+
 .footer-map {
 	height: 300px;
 	width: 100%;
@@ -108,11 +116,14 @@
 	border-color: #ccc;
 	}
 .footer-info {
-    padding: 20px 0;
-    background: #f7f7f7;
+    color: #ffffff;
+    padding: 60px 40px;
+    background-color: #9c59b6;
+
 }
-
-
+.footer-info  a{
+  color: #ffffff;
+}
 
 
 
