@@ -20,3 +20,9 @@ img {
 header{
   margin-bottom: 10px;
 }
+
+.tabs .tab a{
+  font-size: 8px;
+  font-weight: bold;
+  color: #000000;
+}
