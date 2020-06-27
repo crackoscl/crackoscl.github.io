@@ -22,7 +22,17 @@ header{
 }
 
 .tabs .tab a{
-  font-size: 8px;
   font-weight: bold;
   color: #000000;
+}
+
+
+
+@media screen and (max-width: 576px) {
+    .brand-logo{
+      font-size: 1.8rem !important;
+    }
+    .tabs .tab a{
+      padding: 0 8px;
+    }
 }
