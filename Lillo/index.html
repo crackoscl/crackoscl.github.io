@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lillo-APP</title>
 
+    <!-- Add this to <head> -->
+
+<!-- Load required Bootstrap and BootstrapVue CSS -->
+
+</head>
+<body>
+    
+    <div id="app">
+                <nav class="navbar fixed-top navbar-light bg-light">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">Lillo-APP</a>
+                        
+
+                        <b-button id="popover-button-open" @click="show = !show" variant="warning">
+                            <b-icon icon="cart-fill"></b-icon>
+                            <b-badge variant="secondary">{{carrito.length}}</b-badge>
+                           
+                            <b-popover :show.sync="show" 
+                            target="popover-button-open" 
+                            title="Lista de productos"
+                            placement="bottom"
+                            >
+                            <b-table-simple>
+                                <b-thead>
+                                  <b-tr>
+                                    <b-th>#</b-th>
+                                    <b-th>Producto</b-th>
+                                    <b-th>Precio</b-th>
+                                  </b-tr>
+                                </b-thead>
+                                <b-tbody v-for="(item,index) in carrito">
+                                  <b-tr>
+                                    <b-td>{{index + 1 }}</b-td>
+                                    <b-td>{{item.nombre}}</b-td>
+                                    <b-td>{{precio(item.valor)}}</b-td>
+                                  </b-tr>
+                                </b-tbody>
+                                <b-tfoot>
+                                  <b-tr>
+                                    <b-td>Total:</b-td>
+                                    <b-td></b-td>
+                                    <b-td>{{precio(total)}}</b-td>
+                                  </b-tr>
+                                </b-tfoot>
+                              </b-table-simple>
+                              
+                              <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+                                 Su Pedido se Encuenta Vacio!!!
+                              </b-alert>
+
+                                <b-button @click="EnviarPedido" variant="primary" block>Enviar</b-button>
+                              </b-popover>
+                        </b-button>
+
+                     
+                    </div>
+                  </nav>
+
+                 
+                    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mt-2" v-for="(prod) in lista">
+            <div class="card">
+                <!--tips: add .text-center,.text-right to the .card to change card text alignment-->
+                <img :src="prod.imagen" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{prod.nombre}}</h5>
+                    <p class="card-text">{{prod.descripcion}}.</p>
+                    <p>{{precio(prod.valor)}}</p>
+                    <a href="#" @click="AgregarCarro(prod)" class="btn btn-primary">Agregar</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div><!--APP-->
+    
+    <!-- Load polyfills to support older browsers -->
+<script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+
+<!-- Load Vue followed by BootstrapVue -->
+<script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
+<!-- Load the following for BootstrapVueIcons support -->
+<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script> -->
+<script src="js/main.js"></script>
+</body>
+</html>
