@@ -1,107 +1,154 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Load required Bootstrap and BootstrapVue CSS -->
-    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Lillo-APP</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Add this to <head> -->
-
-<!-- Load required Bootstrap and BootstrapVue CSS -->
-
-</head>
-<body>
-    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+   
     <div id="app">
-                <nav class="navbar fixed-top navbar-light bg-light">
-                    <div class="container">
-                        <a class="navbar-brand" href="#">Lillo-APP</a>
-                        
-
-                        <b-button id="popover-button-open" @click="show = !show" variant="warning">
-                            <b-icon icon="cart-fill"></b-icon>
-                            <b-badge variant="secondary">{{carrito.length}}</b-badge>
-                           
-                            <b-popover :show.sync="show" 
-                            target="popover-button-open" 
-                            title="Lista de productos"
-                            placement="bottom"
-                            >
-                            <b-table-simple>
-                                <b-thead>
-                                  <b-tr>
-                                    <b-th>#</b-th>
-                                    <b-th>Producto</b-th>
-                                    <b-th>Precio</b-th>
-                                  </b-tr>
-                                </b-thead>
-                                <b-tbody v-for="(item,index) in carrito">
-                                  <b-tr>
-                                    <b-td>{{index + 1 }}</b-td>
-                                    <b-td>{{item.nombre}}</b-td>
-                                    <b-td>{{precio(item.valor)}}</b-td>
-                                  </b-tr>
-                                </b-tbody>
-                                <b-tfoot>
-                                  <b-tr>
-                                    <b-td>Total:</b-td>
-                                    <b-td></b-td>
-                                    <b-td>{{precio(total)}}</b-td>
-                                  </b-tr>
-                                </b-tfoot>
-                              </b-table-simple>
-                              
-                              <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-                                 Su Pedido se Encuenta Vacio!!!
-                              </b-alert>
-
-                                <b-button @click="EnviarPedido" variant="primary" block>Enviar</b-button>
-                              </b-popover>
-                        </b-button>
-
-                     
-                    </div>
-                  </nav>
-
-                 
-                    
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 mt-2" v-for="(prod) in lista">
-            <div class="card">
-                <!--tips: add .text-center,.text-right to the .card to change card text alignment-->
-                <img :src="prod.imagen" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{prod.nombre}}</h5>
-                    <p class="card-text">{{prod.descripcion}}.</p>
-                    <p>{{precio(prod.valor)}}</p>
-                    <a href="#" @click="AgregarCarro(prod)" class="btn btn-primary">Agregar</a>
-                </div>
-            </div>
-            </div>
+  
+      <nav class="navbar fixed-top navbar navbar-dark bg-dark">
+        <div class="container">
+          <a  class="navbar-brand"  href="#">LilloAPP2</a>
         </div>
+      </nav>
+
+      <div class="container">
+          <div class="row">
+              <form class="col-md-12">
+               
+               <!--PRODUCTOS-->
+               
+                <select v-model="producto" class="custom-select mt-2">
+                  <option v-for="producto in opcionesproducto" v-bind:value="producto.value">
+                    {{producto.text}}
+                  </option>
+                </select>
+
+                <template v-if="producto === 'Fajita'">
+                  
+                <div class="col-md-12 mt-2">
+                  <div class="form-check  form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="Cerdo" v-model="ingredienteproducto" id="defaultCheck">
+                    <label class="form-check-label" for="defaultCheck1">Cerdo</label>
+                  </div>
+                    <div class="form-check  form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="Carne" v-model="ingredienteproducto" id="defaultCheck">
+                      <label class="form-check-label" for="defaultCheck1">Carne</label>
+                    </div>
+
+                    <div class="form-check  form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="Atun" v-model="ingredienteproducto" id="defaultCheck3">
+                      <label class="form-check-label" for="defaultCheck3">Atun</label>
+                    </div>
+
+                    <div class="form-check  form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="Pollo" v-model="ingredienteproducto" id="defaultCheck2">
+                      <label class="form-check-label" for="defaultCheck2">Pollo</label>
+                    </div>
+
+                </div>
+              </template>
+
+                <!--FIN PRODUCTOS-->
+
+                <!--BEBIDAS -->
+                <select v-model="bebida" class="custom-select mt-2">
+                  <option v-for="bebida in opcionesbebida" v-bind:value="bebida.value">
+                    {{bebida.text}}
+                  </option>
+                </select>
+
+                <template v-if="bebida === 'Jugo'">
+                  <div class="col-md-12 mt-2">
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Tamarindo" v-model="listabebidas" id="defaultCheck">
+                        <label class="form-check-label" for="defaultCheck1">Tamarindo</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Naranja" v-model="listabebidas" id="defaultCheck">
+                        <label class="form-check-label" for="defaultCheck1">Naranja</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Papaya" v-model="listabebidas" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">Papaya</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Tutifrutti" v-model="listabebidas" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">Tutifrutti</label>
+                      </div>
+                    </div>
+                </template>
+
+                <template v-if="bebida === 'Te'">
+                  <div class="col-md-12 mt-2">
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Te Verde" v-model="listabebidas" id="defaultCheck">
+                        <label class="form-check-label" for="defaultCheck1">Te Verde</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Te azul" v-model="listabebidas" id="defaultCheck">
+                        <label class="form-check-label" for="defaultCheck1">Te Azul</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Te Naranjo" v-model="listabebidas" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">Te Naranjo</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Te de Marihuana" v-model="listabebidas" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">Te de Marihuana</label>
+                      </div>
+                    </div>
+                </template>
+
+
+
+
+                <!--FIN BEBIDAS-->
+
+
+
+
+
+
+
+              </form>
+
+              <pre class="mt-4 black">
+                {{producto}} - {{ingredienteproducto}}
+                <br/>
+                {{bebida}} - {{listabebidas}}
+
+              </pre>
+          </div>
+      </div>
+
+  
     </div>
+
     
 
-</div><!--APP-->
-    
-    <!-- Load polyfills to support older browsers -->
-<script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
 
-<!-- Load Vue followed by BootstrapVue -->
-<script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
-<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
-
-<!-- Load the following for BootstrapVueIcons support -->
-<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<!-- <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script> -->
-<script src="js/main.js"></script>
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  
+  </body>
 </html>
