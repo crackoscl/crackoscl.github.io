@@ -26,31 +26,31 @@
                
                <!--PRODUCTOS-->
                
-                <select v-model="producto" class="custom-select mt-2">
+                <select v-model="form.producto" class="custom-select mt-2">
                   <option v-for="producto in opcionesproducto" v-bind:value="producto.value">
                     {{producto.text}}
                   </option>
                 </select>
 
-                <template v-if="producto === 'Fajita'">
+                <template v-if="form.producto === 'Fajita'">
                   
                 <div class="col-md-12 mt-2">
                   <div class="form-check  form-check-inline">
-                    <input class="form-check-input" type="checkbox" value="Cerdo" v-model="ingredienteproducto" id="defaultCheck">
+                    <input class="form-check-input" type="checkbox" value="Cerdo" v-model="form.ingredienteproducto" id="defaultCheck">
                     <label class="form-check-label" for="defaultCheck1">Cerdo</label>
                   </div>
                     <div class="form-check  form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="Carne" v-model="ingredienteproducto" id="defaultCheck">
+                      <input class="form-check-input" type="checkbox" value="Carne" v-model="form.ingredienteproducto" id="defaultCheck">
                       <label class="form-check-label" for="defaultCheck1">Carne</label>
                     </div>
 
                     <div class="form-check  form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="Atun" v-model="ingredienteproducto" id="defaultCheck3">
+                      <input class="form-check-input" type="checkbox" value="Atun" v-model="form.ingredienteproducto" id="defaultCheck3">
                       <label class="form-check-label" for="defaultCheck3">Atun</label>
                     </div>
 
                     <div class="form-check  form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="Pollo" v-model="ingredienteproducto" id="defaultCheck2">
+                      <input class="form-check-input" type="checkbox" value="Pollo" v-model="form.ingredienteproducto" id="defaultCheck2">
                       <label class="form-check-label" for="defaultCheck2">Pollo</label>
                     </div>
 
@@ -60,55 +60,55 @@
                 <!--FIN PRODUCTOS-->
 
                 <!--BEBIDAS -->
-                <select v-model="bebida" class="custom-select mt-2">
+                <select v-model="form.bebida" class="custom-select mt-2">
                   <option v-for="bebida in opcionesbebida" v-bind:value="bebida.value">
                     {{bebida.text}}
                   </option>
                 </select>
 
-                <template v-if="bebida === 'Jugo'">
+                <template v-if="form.bebida === 'Jugo'">
                   <div class="col-md-12 mt-2">
                       <div class="form-check  form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="Tamarindo" v-model="listabebidas" id="defaultCheck">
+                        <input class="form-check-input" type="checkbox" value="Tamarindo" v-model="form.listabebidas" id="defaultCheck">
                         <label class="form-check-label" for="defaultCheck1">Tamarindo</label>
                       </div>
 
                       <div class="form-check  form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="Naranja" v-model="listabebidas" id="defaultCheck">
+                        <input class="form-check-input" type="checkbox" value="Naranja" v-model="form.listabebidas" id="defaultCheck">
                         <label class="form-check-label" for="defaultCheck1">Naranja</label>
                       </div>
 
                       <div class="form-check  form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="Papaya" v-model="listabebidas" id="defaultCheck3">
+                        <input class="form-check-input" type="checkbox" value="Papaya" v-model="form.listabebidas" id="defaultCheck3">
                         <label class="form-check-label" for="defaultCheck3">Papaya</label>
                       </div>
 
                       <div class="form-check  form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="Tutifrutti" v-model="listabebidas" id="defaultCheck2">
+                        <input class="form-check-input" type="checkbox" value="Tutifrutti" v-model="form.listabebidas" id="defaultCheck2">
                         <label class="form-check-label" for="defaultCheck2">Tutifrutti</label>
                       </div>
                     </div>
                 </template>
 
-                <template v-if="bebida === 'Te'">
+                <template v-if="form.bebida === 'Te'">
                   <div class="col-md-12 mt-2">
                       <div class="form-check  form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="Te Verde" v-model="listabebidas" id="defaultCheck">
+                        <input class="form-check-input" type="checkbox" value="Te Verde" v-model="form.listabebidas" id="defaultCheck">
                         <label class="form-check-label" for="defaultCheck1">Te Verde</label>
                       </div>
 
                       <div class="form-check  form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="Te azul" v-model="listabebidas" id="defaultCheck">
+                        <input class="form-check-input" type="checkbox" value="Te azul" v-model="form.listabebidas" id="defaultCheck">
                         <label class="form-check-label" for="defaultCheck1">Te Azul</label>
                       </div>
 
                       <div class="form-check  form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="Te Naranjo" v-model="listabebidas" id="defaultCheck3">
+                        <input class="form-check-input" type="checkbox" value="Te Naranjo" v-model="form.listabebidas" id="defaultCheck3">
                         <label class="form-check-label" for="defaultCheck3">Te Naranjo</label>
                       </div>
 
                       <div class="form-check  form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="Te de Marihuana" v-model="listabebidas" id="defaultCheck2">
+                        <input class="form-check-input" type="checkbox" value="Te de Marihuana" v-model="form.listabebidas" id="defaultCheck2">
                         <label class="form-check-label" for="defaultCheck2">Te de Marihuana</label>
                       </div>
                     </div>
@@ -128,9 +128,9 @@
               </form>
 
               <pre class="mt-4 black">
-                {{producto}} - {{ingredienteproducto}}
+                {{form.producto}} - {{form.ingredienteproducto}}
                 <br/>
-                {{bebida}} - {{listabebidas}}
+                {{form.bebida}} - {{form.listabebidas}}
 
               </pre>
           </div>

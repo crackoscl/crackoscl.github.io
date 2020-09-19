@@ -2,17 +2,23 @@ new Vue({
     el: '#app',
     data() {
       return {
-      producto:null,
+
+      form:{
+        producto:null,
+        ingredienteproducto:[],
+        listabebidas:[],
+        bebida:null,
+      
+      },
+
+     
       opcionesproducto:[
         {text:'Selecione un producto', value:'null'},
         {text: 'Completo', value: 'Completo' },
         { text: 'Fajita', value: 'Fajita' },
         { text: 'Sandiwch', value: 'Sandiwch' },
       ],
-      ingredienteproducto:[],
-
-
-      bebida:null,
+     
       opcionesbebida:[
         {text:'Selecione un bebida', value:'null'},
         {text: 'Jugo', value: 'Jugo' },
@@ -20,11 +26,9 @@ new Vue({
         { text: 'Cafe', value: 'Cafe'},
         { text: 'Energetica', value: 'Energetica'},
       ],
-      listabebidas:[],
       
       }
     },
-
 
     methods: {
       onSubmit(evt) {
