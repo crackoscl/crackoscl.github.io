@@ -1,68 +1,154 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>PorotitoMio</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Hello, world!</title>
   </head>
   <body>
-      <header class="header">
-          <h1><img src="img/logo.jpg" alt="porotitomio"></h1>
-      </header>
-    <nav class="navbar">
-        <a href="">Inicio</a>
-        <a href="">Quienes Somos</a>
-        <a href="">Localizacion</a>
-        <a href="">Razones para no ser</a>
-    </nav>
-    <section class="content who">
-        <h2>Quienes Somos</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis laboriosam officiis architecto tempore harum error expedita dolorum rerum ad eos. Et ex dignissimos nam quas expedita dolorem voluptate quae officia!</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa sit rem blanditiis dolorem maiores est facere excepturi nesciunt laboriosam voluptatem perferendis quibusdam unde quas, facilis veniam optio eius cum voluptates.</p>
-    </section>
+   
+    <div id="app">
+  
+      <nav class="navbar fixed-top navbar navbar-dark bg-dark">
+        <div class="container">
+          <a  class="navbar-brand"  href="#">LilloAPP2</a>
+        </div>
+      </nav>
 
-    <section class="content tratamiento">
-        <h2>Tratamientos</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quibusdam corrupti est sed. Tempore accusamus voluptas sequi quisquam sint illum nesciunt est asperiores officiis totam? Fugiat suscipit ullam ex numquam.</p>
-        <ul class="lista">
-            <li>
-                <figure>
-                    <img src="img/icons8-homero-simpson-100.png" alt="homero">
-                    <figcaption>Pañales</figcaption>
-                </figure>
-            </li>
-            <li>
-                <figure>
-                    <img src="img/icons8-ios-filled-100.png" alt="mina">
-                    <figcaption>Pañales</figcaption>
-                </figure>
-            </li>
-            <li>
-                <figure>
-                    <img src="img/icons8-oso-de-peluche-100.png" alt="oso">
-                    <figcaption>Pañales</figcaption>
-                </figure>
-            </li>
-        </ul>
-    </section>
+      <div class="container">
+          <div class="row">
+              <form class="col-md-12">
+               
+               <!--PRODUCTOS-->
+               
+                <select v-model="producto" class="custom-select mt-2">
+                  <option v-for="producto in opcionesproducto" v-bind:value="producto.value">
+                    {{producto.text}}
+                  </option>
+                </select>
 
-    <section class="content tarifas">
-        <article class="contain">
-            <h2 class="title">tarifas</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores a perferendis tempora labore expedita molestiae dolorum laudantium nihil iste commodi, aliquid doloremque culpa, atque sapiente voluptatem sed reiciendis, iusto alias.</p>
-            <p>Lorem, ipsum dolor sit amet consectetaqaqaqaqaqaqur adipisicing elit. Repudiandae quia, quod adipisci corporis iure quos esse sapiente et, voluptate, quasi debitis n10</p>
-            <a href="">enviar</a>
-        </article>
-    </section>
+                <template v-if="producto === 'Fajita'">
+                  
+                <div class="col-md-12 mt-2">
+                  <div class="form-check  form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="Cerdo" v-model="ingredienteproducto" id="defaultCheck">
+                    <label class="form-check-label" for="defaultCheck1">Cerdo</label>
+                  </div>
+                    <div class="form-check  form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="Carne" v-model="ingredienteproducto" id="defaultCheck">
+                      <label class="form-check-label" for="defaultCheck1">Carne</label>
+                    </div>
 
-    <section class="content Localizacion">
-        <h2 class="title">encuentranos</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, sunt.</p>
-        <figure class="map"><img src="img/map.jpg" alt="" title="Mapa"></figure>
-    </section>
+                    <div class="form-check  form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="Atun" v-model="ingredienteproducto" id="defaultCheck3">
+                      <label class="form-check-label" for="defaultCheck3">Atun</label>
+                    </div>
+
+                    <div class="form-check  form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="Pollo" v-model="ingredienteproducto" id="defaultCheck2">
+                      <label class="form-check-label" for="defaultCheck2">Pollo</label>
+                    </div>
+
+                </div>
+              </template>
+
+                <!--FIN PRODUCTOS-->
+
+                <!--BEBIDAS -->
+                <select v-model="bebida" class="custom-select mt-2">
+                  <option v-for="bebida in opcionesbebida" v-bind:value="bebida.value">
+                    {{bebida.text}}
+                  </option>
+                </select>
+
+                <template v-if="bebida === 'Jugo'">
+                  <div class="col-md-12 mt-2">
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Tamarindo" v-model="listabebidas" id="defaultCheck">
+                        <label class="form-check-label" for="defaultCheck1">Tamarindo</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Naranja" v-model="listabebidas" id="defaultCheck">
+                        <label class="form-check-label" for="defaultCheck1">Naranja</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Papaya" v-model="listabebidas" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">Papaya</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Tutifrutti" v-model="listabebidas" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">Tutifrutti</label>
+                      </div>
+                    </div>
+                </template>
+
+                <template v-if="bebida === 'Te'">
+                  <div class="col-md-12 mt-2">
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Te Verde" v-model="listabebidas" id="defaultCheck">
+                        <label class="form-check-label" for="defaultCheck1">Te Verde</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Te azul" v-model="listabebidas" id="defaultCheck">
+                        <label class="form-check-label" for="defaultCheck1">Te Azul</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Te Naranjo" v-model="listabebidas" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">Te Naranjo</label>
+                      </div>
+
+                      <div class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="Te de Marihuana" v-model="listabebidas" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">Te de Marihuana</label>
+                      </div>
+                    </div>
+                </template>
+
+
+
+
+                <!--FIN BEBIDAS-->
+
+
+
+
+
+
+
+              </form>
+
+              <pre class="mt-4 black">
+                {{producto}} - {{ingredienteproducto}}
+                <br/>
+                {{bebida}} - {{listabebidas}}
+
+              </pre>
+          </div>
+      </div>
+
+  
+    </div>
+
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  
   </body>
 </html>
