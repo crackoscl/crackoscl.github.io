@@ -66,7 +66,7 @@
                   </option>
                 </select>
 
-                <template v-if="form.bebida === 'Jugo'">
+                <!-- <template v-if="form.bebida === 'Jugo'">
                   <div class="col-md-12 mt-2">
                       <div class="form-check  form-check-inline">
                         <input class="form-check-input" type="checkbox" value="Tamarindo" v-model="form.listabebidas" id="defaultCheck">
@@ -88,9 +88,9 @@
                         <label class="form-check-label" for="defaultCheck2">Tutifrutti</label>
                       </div>
                     </div>
-                </template>
+                </template> -->
 
-                <template v-if="form.bebida === 'Te'">
+                <!-- <template v-if="form.bebida === 'Te'">
                   <div class="col-md-12 mt-2">
                       <div class="form-check  form-check-inline">
                         <input class="form-check-input" type="checkbox" value="Te Verde" v-model="form.listabebidas" id="defaultCheck">
@@ -112,18 +112,38 @@
                         <label class="form-check-label" for="defaultCheck2">Te de Marihuana</label>
                       </div>
                     </div>
+                </template> -->
+
+                <template v-if="form.bebida === 'Jugo'">
+                  <div class="col-md-12 mt-2">
+                    <div v-for="(lista, index) in jugos" class="form-check  form-check-inline">
+                      <input class="form-check-input" type="checkbox" :value="lista.value" v-model="form.listadejugos" id="defaultCheck"
+                      :disabled="form.listadejugos.length == max"
+                      >
+                      <label class="form-check-label" for="defaultCheck1">{{lista.text}}</label>
+                    </div>
+                  </div>
                 </template>
 
+                <template v-if="form.bebida === 'Te'">
+                  <div class="col-md-12 mt-2">
+                      <div v-for="(lista, index) in Te" class="form-check  form-check-inline">
+                        <input class="form-check-input" type="checkbox" :value="lista.value" v-model="form.listadete" id="defaultCheck"
+                        :disabled="form.listadete.length == max"
+                        >
+                        <label class="form-check-label" for="defaultCheck1">{{lista.text}}</label>
+                      </div>
+                    </div>
+                </template>
 
-
+              
 
                 <!--FIN BEBIDAS-->
 
 
 
-
-
-
+                <button class="btn btn-primary mt-2" @click="enviarFormulario" type="submit">Agregar</button>
+                <button class="btn btn-danger mt-2" @click="resetearFormulario" type="submit">Reset</button>
 
               </form>
 
@@ -131,6 +151,7 @@
                 {{form.producto}} - {{form.ingredienteproducto}}
                 <br/>
                 {{form.bebida}} - {{form.listabebidas}}
+                {{form.listadete}} - {{form.listadejugos}}
 
               </pre>
           </div>
