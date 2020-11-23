@@ -110,6 +110,13 @@ footer img{
 }
 
 
+@media all and (max-width:990px){
+  .navbar-nav .nav-link{
+    padding: 10px;
+  }
+}
+
+
 @media all and (min-width:1001px) {
   .h-75{
     height: 85% !important;
