@@ -1,0 +1,41 @@
+
+
+<h1 class="bg-primary text-center rounded-top rounded-right rounded-bottom rounded-left">Pagina de Enlases</h1>
+
+<h2 class="bg-dark text-center text-white ">Actualizado</h2>
+
+
+<a class="nav-link" href="#">Noticias Destacadas del Dia</a>
+<a class="nav-link" href="#">Sitios de Busqueda </a>
+<a class="nav-link" href="#">Diarios</a>
+<a class="nav-link" href="#">Diarios</a>
+
+<h2>Noticias destacadas del dia</h2>
+ 
+<li>[07-06-2020 15:22 ] Noticia 1.<a href="#"> ver mas</a></li>
+<li>[07-06-2020 15:22 ] Noticia 1.<a href="#"> ver mas</a></li>
+<li>[07-06-2020 15:22 ] Noticia 1.<a href="#"> ver mas</a></li>
+<li>[07-06-2020 15:22 ] Noticia 1.<a href="#"> ver mas</a></li>                      
+
+
+<h2>motores de Busqueda</h2>
+<li>Buscar en <a href="#">Google</a></li>
+<li>[07-06-2020 15:22 ] Noticia 1.<a href="#">ver mas</a></li>
+
+
+<h2>Diarios Nacionales E Internacionesles</h2>
+<li>Revisar Noticias En<a href="#"> Washington Post</a></li>
+<li>Revisar Noticias En<a href="#"> Emol</a></li>
+
+
+<h2>Sitios de Finanza</h2>
+<li>Ir a<a href="#"> Bolsa de Comercio de santiago</a></li>
+<li>Ir a<a href="#"> Yahoo Finanzas</a></li>
+
+
+<h2>Libros</h2>
+<li><a href="#">Social Arquitecture</a></li>
+<li><a href="#">Emol</a></li>
+
+
+<p class="text-center text-white">2019-2020 python group Awakelab</p>

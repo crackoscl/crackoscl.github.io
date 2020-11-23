@@ -1,24 +1,122 @@
-
-body{
-    margin-top: 80px;
+body {
+  font-family: "Roboto", sans-serif;
+  margin-top: 85px;
 }
 
-.Button{
-    margin-left: 10px;
-    margin-top: 5px;
-  
-  }
-  
-  .Card{
-    margin-top: 10px;
-    margin-right: 10px;
-  }
-  
-  .modalFooter{
-    margin-right: auto;
-    margin-left: auto;
-  }
+h1,
+h2 {
+  color: #f5ab1a !important;
+}
 
-  .popover{
-    max-width: 300px;
-  }
+header {
+  background-image: url("../img/banner2.jpeg");
+  background-size: cover;
+  height: 200px;
+  padding-top: 100px;
+}
+
+a{
+    color: #c8672d  ;
+}
+a:hover{
+    color:#f5ab1a;
+}
+
+.badge-info {
+  background-color: #c8672d;
+}
+
+.card-pofiada {
+  height: 91% !important;
+}
+
+.bg-colores{
+   background-color:#6900FF;
+}
+
+.bg-colores:hover{
+    background-color:#6C757D;
+}
+
+.col-md-6,
+.col-md-4,
+.col-md-12 {
+  padding: 0 2px;
+}
+
+.btn-outline-success {
+  color: #000000;
+  border-color: #f5ab1a;
+}
+
+form .btn-outline-success:hover {
+  background-color: #f5ab1a !important;
+  border-color: #f3c812 !important;
+}
+
+.container {
+  min-width: 360px;
+}
+
+
+
+.modal-content{
+
+    color: #000000;
+}
+.navbar-brand img {
+  height: 55px;
+}
+
+ul,
+ol {
+  padding-left: 20px;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+    color:#ffffff ;
+}
+
+.btn-outline-secondary:hover{
+    color: #fff;
+    border-radius: 30px;
+    border-color:#f3c812 ;
+    background-color:#4376B0 ;
+    
+}
+
+hr {
+  margin-top: 0;
+}
+
+footer img{
+    height: 40px;
+}
+
+
+
+/*responsive*/
+@media all and (max-width:1000px) {
+     .h-75{
+        height: 88% !important;
+     }
+    }
+
+
+@media all and (max-width:800px) {
+    .h-75{
+        height: 90% !important;
+    }
+
+}
+
+
+@media all and (max-width:600px) {
+  
+}
+
+
+
+
+
+

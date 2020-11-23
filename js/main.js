@@ -1,96 +1,31 @@
+fetch('https://mindicador.cl/api')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('dolar').innerHTML = (data.dolar.valor);
+        document.getElementById('euro').innerHTML = (data.euro.valor);
+        document.getElementById('ipc').innerHTML = (data.ipc.valor);
+        document.getElementById('uf').innerHTML = (data.uf.valor);
+        document.getElementById('utm').innerHTML = (data.utm.valor);
+        document.getElementById('tasa_desempleo').innerHTML = (data.tasa_desempleo.valor);
+        document.getElementById('bitcoin').innerHTML = (data.bitcoin.valor);
+        document.getElementById('libra_cobre').innerHTML = (data.libra_cobre.valor);
+    })
 
 
-new Vue({
-  el: '#app',
-  data () {
-    return {
-      lista: [],
-      total: 0,
-      show:false,
-      fields: ['key', 'nombre', 'valor'],
-      carrito:[],
-      showDismissibleAlert: false
-    }
-  },
+function muestraHora() {
 
-  created(){
-    this.GetLista()
-  },
-
-  methods:{
-    async GetLista(){
-      try{
-        const ListaWP = await axios.get('http://www.micompleto.cl/wp-json/wp/v2/menu')
-
-        await ListaWP.data.forEach(element => {
-          let item = {}
-          item.nombre = element.acf.nombre;
-          item.valor = parseInt(element.acf.valor);
-          item.descripcion = element.acf.descripcion;
-          item.imagen = element.acf.imagen.url;
-          this.lista.push(item)
-        });
-      }
-      catch(error){
-        console.log(error)
-      }
-    },
-
-    AgregarCarro(prod,index){
-      this.total += prod.valor 
-      this.carrito.push({
-        id:index,
-        nombre:prod.nombre,
-        valor:prod.valor,
-      })
-    },
-
-    precio(value){
-      //toLocaleString('es',20)
-      return '$' + value.toLocaleString('es',20)
-    },
-
-    EliminarPedido(prod,id){
-      this.total -= prod.valor
-      this.carrito.splice(id,1)
-    },
+    momentoActual = new Date();
+    diaFecha = momentoActual.getDate() + '/' + momentoActual.getMonth() + '/' + momentoActual.getFullYear();
+    hora = momentoActual.getHours();
+    minuto = momentoActual.getMinutes();
+    minuto = ('0' + momentoActual.getMinutes());
+    minuto = minuto.substr(minuto.length-2,2);
+    segundo = momentoActual.getSeconds(); horaImprimible = hora + " : " + minuto;
+    document.getElementById('Hora').innerHTML = diaFecha + "&nbsp;&nbsp;" + horaImprimible + "&nbsp;" + "Hrs";
+    setTimeout(muestraHora, 60000);
+}
 
 
-    EnviarPedido(){
-      if(this.carrito.length === 0){
-        this.showDismissibleAlert = true
-      }
-      else{
-           function ismobile(){
-              if (sessionStorage.desktop)
-                    return false;
-                else if (localStorage.mobile)
-                    return true;
-                var mobile = ['iphone', 'ipad', 'android', 'blackberry', 'nokia', 'opera mini', 'windows mobile', 'windows phone', 'iemobile'];
-                for (var i in mobile)
-                    if (navigator.userAgent.toLowerCase().indexOf(mobile[i].toLowerCase()) > 0) return true;
-                return false;
-            }
-            const urlDesktop = 'https://web.whatsapp.com/';
-            const urlMobile = 'whatsapp://';
-            const telefono = '34654087601';
-            item = {}
-            this.carrito.forEach(function(prd){
-              var repetido = prd["nombre"]
-              item[repetido] = item[repetido] ? (item[repetido] + 1): 1;
-            })
+function buscar() {
 
-             let mensaje = 'send?phone=' + telefono + '&text=*_Formulario Lillo APP CODE_*%0A* PRODUCTO *%0A' +JSON.stringify(item)+ '%0A* TOTAL *%0A' +'$'+ this.total + ''
-
-          if(ismobile()){
-            window.open(urlMobile + mensaje, '_blank')
-          }else{
-            window.open(urlDesktop + mensaje, '_blank')
-          }
-          }
-        
-    }
-  } //methods
- 
-})
-  
+}
