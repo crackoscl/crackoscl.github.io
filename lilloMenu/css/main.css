@@ -3,6 +3,9 @@ body{
 	font-size: 13px;
 }
 
+.tabs .tab a{
+	font-size: 11px;
+}
 .card{
 	margin: .5rem 0 0.5rem 0;
 }
@@ -21,3 +24,4 @@ body{
 .card .card-action{
 	padding: 8px 9px;
 }
+
