@@ -2,13 +2,14 @@
 .card .card-title{
 	font-size: 15px;
 	font-weight: 400;
+	margin-bottom: 0px !important;
 }
 
 .card .card-content p{
 	color: #6f6f6f;
 }
 .card .card-content{
-	padding: 9px;
+	padding:3px 0px 0px 10px;
 }
 .card .card-action{
 	padding: 8px 9px;
