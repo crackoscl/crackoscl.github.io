@@ -25,3 +25,11 @@ body{
 	padding: 8px 9px;
 }
 
+.card .card-content .card-title{
+	line-height: 24px;
+}
+
+.card.horizontal .card-image img{
+	height: 100%;
+	object-fit: cover;
+}
