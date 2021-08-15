@@ -1,3 +1,12 @@
+
+.card .card-title{
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.card .card-content p{
+	color: #6f6f6f;
+}
 .card .card-content{
 	padding: 9px;
 }
