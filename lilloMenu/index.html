@@ -1,352 +1,405 @@
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <title>Don Lillo</title>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-            <div class="row">
-                <div class="col s12">
-                  <ul class="tabs">
-                    <li class="tab col s3"><a class="active" href="#completos">Completos</a></li>
-                    <li class="tab col s3"><a href="#fajitas">Fajitas</a></li>
-                    <li class="tab col s3"><a href="#as">As</a></li>
-                    <li class="tab col s3"><a href="#sandwich">Sandwich</a></li>
-                    <li class="tab col s3"><a href="#papas">Papas fritas</a></li>
-                    <li class="tab col s3"><a href="#bebidas">Bebidas</a></li>
-                  </ul>
-                </div>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3">
+            <a class="active" href="#completos">Completos</a>
+          </li>
+          <li class="tab col s3"><a href="#fajitas">Fajitas</a></li>
+          <li class="tab col s3"><a href="#as">As</a></li>
+          <li class="tab col s3"><a href="#sandwich">Sandwich</a></li>
+          <li class="tab col s3"><a href="#papas">Papas fritas</a></li>
+          <li class="tab col s3"><a href="#bebidas">Bebidas</a></li>
+        </ul>
+      </div>
 
-                <div id="completos" class="col s12">
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/completo.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Completo</span>
-                          <p>Pan, vienesa, especial, agregados a gusto, aderezos a gusto.</p>
-                          <p>precio: <b>$1.990</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/completo.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Completo más</span>
-                          <p>bebiba, agua mineral, té o café.</p>
-                          <p>precio: <b>$2.700</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/completo.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Completo más </span>
-                          <p>jugo natural (más 500 agrega leche o infusión de menta)</p>
-                          <p>precio: <b>$3.400</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div><!--Completo-->
-
-                <div id="fajitas" class="col s12">
-                  
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/fajita.jpg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Fajita</span>
-                          <p>Tortilla de harina, 1 base (pollo, cerdo, carne , quesillo o atún, agregados a gusto, aderezos a gusto</p>
-                          <p>precio: <b>$2.990</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/fajita.jpg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Fajita más </span>
-                          <p>bebida, agua mineral, té o café</p>
-                          <p>precio: <b>$3.690</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/fajita.jpg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Fajita más </span>
-                          <p>jugo natural (más $500 agrega leche o infusión de menta)</p>
-                          <p>precio: <b>$4.480</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div><!--Fajitas-->
-                
-                <div id="as" class="col s12">
-                  
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/as.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">As</span>
-                          <p>Pan, corte de vacuno (posta negra o rosada),agregados a gusto, aderezos a gusto.</p>
-                          <p>precio: <b>$2.490</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/as.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">As más </span>
-                          <p>Bebida, agua mineral, té o café</p>
-                          <p>precio: <b>$3.290</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/as.jpeg">
-                      </div>
-                      <div clAss="card-stacked">
-                        <div clAss="card-content">
-                            <span clAss="card-title">As más </span>
-                          <p>Jugo natural(más  <b>$500</b> agrega leche o infusión de menta</p>
-                          <p>precio: <b>$3.990</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div><!--As-->
-
-                <div id="sandwich" class="col s12">
-                  
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/sandwich.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Sándwich</span>
-                          <p>pan de marraqueta o molde, 1 proteína (pollo, cerdo, carne o atún) </p>
-                          <p>precio: <b>$2.990</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/sandwich.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Sándwich más</span>
-                          <p>bebida, té o café</p>
-                          <p>precio: <b>$3.690</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/sandwich.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Sándwich más</span>
-                          <p>jugo natural(más $500 agrega
-                            leche o infusión de menta)</p>
-                            <p>precio: <b>$4.480</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/sandwich.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Sándwich especial</span>
-                          <p>pan de marraqueta o molde, disfruta en los distintos formatos
-                            Aliado (queso – cecina), queso salame, tostadas con mantequilla, 
-                            queso fresco, ave mayo, pechuga de pavo</p>
-                            <p>precio: <b>$1.990</b></p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#completos_agregados">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                </div><!--Sandwich-->
-
-
-                <div id="papas" class="col s12">
-
-                  <div class="col s12 m12">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="img/45650_1612205202241_250_thumb.jpeg">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Papas Fritas</span>
-                          <p>I am a very simple card. I am a very simple card.</p>
-                        </div>
-                        <div class="card-action">
-                          <a class="modal-trigger" href="#modal1">Ver Agregados</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div><!--Papas-->
-
-
-                <div id="bebidas" class="col s12">
-                  
-                 
-                </div><!--Bebidas-->
-
+      <div id="completos" class="col s12">
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/completo.jpeg" />
             </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Completo</span>
+                <p>
+                  Pan, vienesa, especial, agregados a gusto, aderezos a gusto.
+                </p>
+                <p>precio: <b>$1.990</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <!-- Modal Structure -->
-  <div id="completos_agregados" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h6>Agregados a gusto</h6>
-      <p>lechuga, tomate, choclo, champiñones, cebolla caramelizada, 
-        salsa americana, salsa verde, porotos verdes, chucrut, 
-        palta, aceitunas, palmitos, porotos negros, pepinillos dill, 
-        ají verde, pimentón verde.</p>
-      
-      <h6>Aderezos</h6>
-      <p>
-        mayonesa, mayonesa casera, mostaza, kétchup, salsa de queso, salsa de ajo, salsa de rocoto mayo 
-        – ciboulette, salsa barbiecure, pebre, ají en salsa, cilantro, salsa de barbacoa casera.
-      </p>
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/completo.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Completo, más</span>
+                <p>bebiba, agua mineral, té o café.</p>
+                <p>precio: <b>$2.700</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <h6>Proteína adicional <b>$950</b></h6>
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/completo.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Completo, más </span>
+                <p>jugo natural (más 500 agrega leche o infusión de menta)</p>
+                <p>precio: <b>$3.400</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Completo-->
 
+      <div id="fajitas" class="col s12">
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/fajita.jpg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Fajita</span>
+                <p>
+                  Tortilla de harina, 1 base (pollo, cerdo, carne , quesillo o
+                  atún, agregados a gusto, aderezos a gusto
+                </p>
+                <p>precio: <b>$2.990</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/fajita.jpg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Fajita, más </span>
+                <p>bebida, agua mineral, té o café</p>
+                <p>precio: <b>$3.690</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/fajita.jpg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Fajita, más </span>
+                <p>jugo natural (más $500 agrega leche o infusión de menta)</p>
+                <p>precio: <b>$4.480</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Fajitas-->
+
+      <div id="as" class="col s12">
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/as.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">As</span>
+                <p>
+                  Pan, corte de vacuno (posta negra o rosada),agregados a gusto,
+                  aderezos a gusto.
+                </p>
+                <p>precio: <b>$2.490</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/as.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">As, más </span>
+                <p>Bebida, agua mineral, té o café</p>
+                <p>precio: <b>$3.290</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/as.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span clAss="card-title">As, más </span>
+                <p>
+                  Jugo natural(más <b>$500</b> agrega leche o infusión de menta
+                </p>
+                <p>precio: <b>$3.990</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--As-->
+
+      <div id="sandwich" class="col s12">
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/sandwich.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Sándwich</span>
+                <p>
+                  pan de marraqueta o molde, 1 proteína (pollo, cerdo, carne o
+                  atún)
+                </p>
+                <p>precio: <b>$2.990</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/sandwich.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Sándwich, más</span>
+                <p>bebida, té o café</p>
+                <p>precio: <b>$3.690</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/sandwich.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Sándwich, más</span>
+                <p>jugo natural(más $500 agrega leche o infusión de menta)</p>
+                <p>precio: <b>$4.480</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/sandwich.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Sándwich especial</span>
+                <p>
+                  pan de marraqueta o molde, disfruta en los distintos formatos
+                  Aliado (queso – cecina), queso salame, tostadas con
+                  mantequilla, queso fresco, ave mayo, pechuga de pavo
+                </p>
+                <p>precio: <b>$1.990</b></p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#completos_agregados"
+                  >Ver Agregados</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Sandwich-->
+
+      <div id="papas" class="col s12">
+        <div class="col s12 m12">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="img/45650_1612205202241_250_thumb.jpeg" />
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Papas Fritas</span>
+                <p>I am a very simple card. I am a very simple card.</p>
+              </div>
+              <div class="card-action">
+                <a class="modal-trigger" href="#modal1">Ver Agregados</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Papas-->
+
+      <div id="bebidas" class="col s12"></div>
+      <!--Bebidas-->
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+
+    <!-- Modal Structure -->
+    <div id="completos_agregados" class="modal bottom-sheet">
+      <div class="modal-content">
+        <h6>Agregados a gusto</h6>
+        <p>
+          lechuga, tomate, choclo, champiñones, cebolla caramelizada, salsa
+          americana, salsa verde, porotos verdes, chucrut, palta, aceitunas,
+          palmitos, porotos negros, pepinillos dill, ají verde, pimentón verde.
+        </p>
+
+        <h6>Aderezos</h6>
+        <p>
+          mayonesa, mayonesa casera, mostaza, kétchup, salsa de queso, salsa de
+          ajo, salsa de rocoto mayo – ciboulette, salsa barbiecure, pebre, ají
+          en salsa, cilantro, salsa de barbacoa casera.
+        </p>
+
+        <h6>Proteína adicional <b>$950</b></h6>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Aceptar</a
+        >
+      </div>
     </div>
-  </div>
-        
 
-  <footer>
-<div class="fixed-action-btn">
-  <a class="btn-floating btn-large red">
-    <i class="large material-icons">apps</i>
-  </a>
-  <ul>
-    <li><a href="tel:+56948713520" class="btn-floating red"><i class="material-icons">call</i></a></li>   
-    <li><a class="btn-floating yellow darken-1"><i class="material-icons">room</i></a></li>
-    <li><a href="https://wa.me/56948713520"  title="Escribenos un whatsapp" class="btn-floating green darken-1"><i class="material-icons">whatsapp</i></a></li>
-  </ul>
-</div>
-      
-  </footer>
+    <footer>
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+          <i class="large material-icons">apps</i>
+        </a>
+        <ul>
+          <li>
+            <a href="tel:+56948713520" class="btn-floating red"
+              ><i class="material-icons">call</i></a
+            >
+          </li>
+          <li>
+            <a class="btn-floating yellow darken-1"
+              ><i class="material-icons">room</i></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://wa.me/56948713520"
+              title="Escribenos un whatsapp"
+              class="btn-floating green darken-1"
+              ><i class="material-icons">whatsapp</i></a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
 
-      <!--JavaScript at end of body for optimized loading-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script src="js/main.js"></script>
-    </body>
-  </html>
-        
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

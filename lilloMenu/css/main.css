@@ -1,35 +1,34 @@
-
-body{
-	font-size: 13px;
+body {
+  font-size: 13px;
 }
 
-.tabs .tab a{
-	font-size: 11px;
+.tabs .tab a {
+  font-size: 11px;
 }
-.card{
-	margin: .5rem 0 0.5rem 0;
+.card {
+  margin: 0.5rem 0 0.5rem 0;
 }
-.card .card-title{
-	font-size: 15px;
-	font-weight: 400;
-	margin-bottom: 0px !important;
-}
-
-.card .card-content p{
-	color: #6f6f6f;
-}
-.card .card-content{
-	padding:3px 0px 0px 10px;
-}
-.card .card-action{
-	padding: 8px 9px;
+.card .card-title {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 0px !important;
 }
 
-.card .card-content .card-title{
-	line-height: 24px;
+.card .card-content p {
+  color: #6f6f6f;
+}
+.card .card-content {
+  padding: 3px 0px 0px 10px;
+}
+.card .card-action {
+  padding: 8px 9px;
 }
 
-.card.horizontal .card-image img{
-	height: 100%;
-	object-fit: cover;
+.card .card-content .card-title {
+  line-height: 24px;
+}
+
+.card.horizontal .card-image img {
+  height: 100%;
+  object-fit: cover;
 }
