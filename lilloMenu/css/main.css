@@ -32,3 +32,11 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+.tabs-content.carousel.carousel-slider .carousel-item.active{
+  position: relative;
+  }
+  
+.tabs-content.carousel.carousel-slider{ 
+  height: auto !important; 
+}
