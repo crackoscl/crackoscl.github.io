@@ -1,4 +1,4 @@
-M.AutoInit();
+// M.AutoInit();
 
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".fixed-action-btn");
